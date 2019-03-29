@@ -34,8 +34,8 @@ def Roman_to_Integer(str):
             sum = sum - d[a]
         else:
             sum = sum + d[a]
-            
+
     sum = sum + d[b]
     return sum
 
-print(Roman_to_Integer("XIV"))
+print(Roman_to_Integer("MCMXCIV"))
