@@ -22,7 +22,7 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
 '''
 
-def Roman_to_Integer(str):
+def romanToInt(str):
     d = {"I" : 1, "V" : 5, "X" : 10, "L" : 50, "C" : 100, "D" : 500, "M" : 1000}
     
     sum = 0
@@ -35,7 +35,7 @@ def Roman_to_Integer(str):
         else:
             sum = sum + d[a]
 
-    sum = sum + d[b]
+    sum = sum + d[str[-1]]
     return sum
 
-print(Roman_to_Integer("MCMXCIV"))
+print(romanToInt("MCMXCIV"))

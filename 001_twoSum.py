@@ -11,12 +11,12 @@
 所以返回 [0, 1]
 '''
 
-def result(int,list):
+def twoSum(int,list):
     b = True
     for i in range(0,len(list)-1):
         for j in range(i+1 ,len(list)):
             if (list[i] + list[j] == int):
-                print i,j
+                print(i,j)
                 b = False
     if(b):
         print("no result")
@@ -24,4 +24,4 @@ def result(int,list):
             
                 
 list1 = [1, 2, 3, 5, 8, 9, 10, 13, 16]
-result(13,list1)
+twoSum(13,list1)

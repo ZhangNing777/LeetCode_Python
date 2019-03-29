@@ -20,19 +20,19 @@ def Reverse_Integer(int):
             c = c * 10 - b
             int = a
         if(c<-2**31):
-            print 0
+            print(0) 
         else:
-            print c
+            print(c)
     else:
         while(int != 0):
-            a = int / 10
+            a = int // 10
             b = int - a * 10
             c = c * 10 + b
             int = a
         if(c > 2**31-1):
-            print 0
+            print(0)
         else:
-            print c
+            print(c)
     
 
 
