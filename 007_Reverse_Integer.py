@@ -8,33 +8,28 @@
 
 '''
 
-def Reverse_Integer(int):
-    c = 0
-    if (int > (2**31-1)) or (int < (-2**31)):
-        print("This number is out of range")
-    elif (int < 0):
-        int = -1 * int
-        while(int != 0):
-            a = int / 10
-            b = int - a * 10
-            c = c * 10 - b
-            int = a
-        if(c<-2**31):
-            print(0) 
+class Solution:
+    def reverse(self, x: int) -> int:
+        if x==0:
+            return 0
+        
+        if x < 0:
+            index = -1
+            x *= -1
         else:
-            print(c)
-    else:
-        while(int != 0):
-            a = int // 10
-            b = int - a * 10
-            c = c * 10 + b
-            int = a
-        if(c > 2**31-1):
-            print(0)
-        else:
-            print(c)
-    
+            index = 1
 
+        y = 0
+        i = 10
 
-Reverse_Integer(-134634563)
+        while x != 0:
+            a = x%10
+            y = y*i + a
+            x //= 10
+
+        y *= index
+
+        if -2**31< y <2**31-1:
+            return y
+        return 0
 
