@@ -20,11 +20,10 @@ class Solution:
             index = 1
 
         y = 0
-        i = 10
 
         while x != 0:
             a = x%10
-            y = y*i + a
+            y = y*10 + a
             x //= 10
 
         y *= index
@@ -33,3 +32,5 @@ class Solution:
             return y
         return 0
 
+a = Solution()
+print(a.reverse(123456))
