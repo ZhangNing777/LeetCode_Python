@@ -15,24 +15,41 @@
 ]'''
 
 
+# class Solution:
+#     def permute(self, nums:[int]) ->[[int]]:
+        
+#         def backtrack(a = 0):
+            
+#             if a == n:  
+#                 output.append(nums[:])
+            
+#             for i in range(a, n):
+#                 nums[a], nums[i] = nums[i], nums[a]
+#                 backtrack(a + 1)
+#                 nums[a], nums[i] = nums[i], nums[a]
+        
+#         n = len(nums)
+#         output = []
+#         backtrack()
+        
+#         return output
+
 class Solution:
-    def permute(self, nums:[int]) ->[[int]]:
-        
-        def backtrack(a = 0):
-            
-            if a == n:  
-                output.append(nums[:])
-            
-            for i in range(a, n):
-                nums[a], nums[i] = nums[i], nums[a]
-                backtrack(a + 1)
-                nums[a], nums[i] = nums[i], nums[a]
-        
-        n = len(nums)
-        output = []
-        backtrack()
-        
-        return output
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        def backtrack(a,n):
+            if n == len(nums):
+                res.append(a.copy())
+                return
+            else:
+                for i in range(len(nums)):
+                    if nums[i] not in a:
+                        a.append(nums[i])
+                        backtrack(a,n+1)
+                        a.pop()
+
+        backtrack([],0)
+        return res
 
 a = Solution()
 print(a.permute([1,2,3]))
